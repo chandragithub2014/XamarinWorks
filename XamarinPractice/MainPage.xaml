@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinPractice.MainPage"
+             BackgroundColor="LightYellow"
+             >
+    <ContentPage.Resources>
+         <ResourceDictionary>
+             <Style x:Key="buttonStyle" TargetType="Button">
+             <Setter Property="BorderRadius" Value="5" />
+                <Setter Property="BorderWidth" Value="5" />
+                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="TextColor" Value="White" />
+                 <Setter Property="BackgroundColor" Value="Chocolate"></Setter>
+             </Style>
+
+            <Style x:Key="headingStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="20"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+                <Setter Property="TextColor" Value="AntiqueWhite"></Setter>
+                <Setter Property="BackgroundColor" Value="Green"></Setter>
+                <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
+                
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="10,5,10,10"
+                 >
+        <!-- Place new controls here -->
+        <Label Text="Welcome to Xamarin Login!" 
+               Style="{StaticResource headingStyle}"/>
+        <Entry x:Name="uname"  Placeholder="Enter User Name"  WidthRequest="200"></Entry>
+        <Entry x:Name="pwd"  Placeholder="Enter password"  WidthRequest="200"
+               IsPassword="True"></Entry>
+        <StackLayout Orientation="Horizontal" Margin="0,30,0,30"
+            >
+        <Button x:Name="login" Text="Login"  Clicked="login_Clicked"
+                Style="{StaticResource buttonStyle}"> </Button>
+            <Button x:Name="signUp" Text="Register" 
+                    Style="{StaticResource buttonStyle}"
+                    Clicked="signUp_Clicked"> </Button>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{28B181E4-6BD5-4A5B-BF91-2974EAB0BE21}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>XamarinPractice</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)RegistrationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)database\UserInfoListViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)TemplateScreens\TemplateListScreenPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)network\MyNetworkListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)XamTabs\PracticeTabbedPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ImageList\MyImageListViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ListMVVM\View\CarListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ProfileMVVM\View\ProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)AssemblyInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RegistrationPage.xaml.cs">
+      <DependentUpon>RegistrationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)KeyboardView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)database\Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)database\UserInfoDataBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)model\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)database\UserInfoListViewPage.xaml.cs">
+      <DependentUpon>UserInfoListViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)network\RestClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)network\RetroInterface.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)model\PostUsers.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)model\TemplateInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TemplateScreens\TemplateListScreenPage.xaml.cs">
+      <DependentUpon>TemplateListScreenPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)network\MyNetworkListPage.xaml.cs">
+      <DependentUpon>MyNetworkListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)XamTabs\PracticeTabbedPage.xaml.cs">
+      <DependentUpon>PracticeTabbedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ImageList\MyImageListViewPage.xaml.cs">
+      <DependentUpon>MyImageListViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)model\Contacts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListMVVM\ViewModel\CarsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListMVVM\Model\Car.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListMVVM\ViewModel\RestClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListMVVM\ViewModel\RetroInterface.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListMVVM\View\CarListPage.xaml.cs">
+      <DependentUpon>CarListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ListMVVM\ViewModel\MyHTTP.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfileMVVM\Model\Profile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfileMVVM\View\ProfilePage.xaml.cs">
+      <DependentUpon>ProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ProfileMVVM\ViewModel\ProfileViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProfileMVVM\View\InvertBooleanConverter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)database\" />
+    <Folder Include="$(MSBuildThisFileDirectory)network\" />
+    <Folder Include="$(MSBuildThisFileDirectory)model\" />
+    <Folder Include="$(MSBuildThisFileDirectory)TemplateScreens\" />
+    <Folder Include="$(MSBuildThisFileDirectory)XamTabs\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ImageList\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ListMVVM\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ListMVVM\Model\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ListMVVM\View\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ListMVVM\ViewModel\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ProfileMVVM\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ProfileMVVM\Model\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ProfileMVVM\View\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ProfileMVVM\ViewModel\" />
+  </ItemGroup>
+</Project>

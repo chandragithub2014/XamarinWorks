@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XamarinPractice.database.UserInfoListViewPage"
+             Title="Registered Users">
+    <ListView x:Name="MyListView"
+              ItemsSource="{Binding Items}"
+              ItemTapped="Handle_ItemTapped"
+              CachingStrategy="RecycleElement"
+              RowHeight="100"
+              HasUnevenRows="False">
+        <!--Built in Cells-->
+        <!-- <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding UserName}" TextColor="Black"/>
+            </DataTemplate>
+        </ListView.ItemTemplate>  -->
+        <!--Custom View Cells-->
+       
+    <ListView.ItemTemplate >
+      <DataTemplate>
+        <ViewCell>
+          <StackLayout Margin="10,0,10,0" BackgroundColor="BlanchedAlmond" >
+            <Label Text="{Binding UserName, StringFormat='UserName: {0}'}" 
+                   Style="{DynamicResource labelStyle}" />
+            <Label Text="{Binding Name, StringFormat='Name: {0}'}" 
+                   Style="{DynamicResource labelStyle}"/>
+          </StackLayout>
+        </ViewCell>
+      </DataTemplate>
+    </ListView.ItemTemplate>
+   
+    </ListView>
+</ContentPage>

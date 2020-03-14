@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mypages="clr-namespace:XamarinPractice;assembly=XamarinPractice" xmlns:mypages1="clr-namespace:XamarinPractice.database" xmlns:mypages2="clr-namespace:XamarinPractice.network" xmlns:mypages3="clr-namespace:XamarinPractice"
+            x:Class="XamarinPractice.XamTabs.PracticeTabbedPage"
+            Title="Tabbed Page">
+    <!--Pages can be added as references or inline-->
+    <TabbedPage.Children>
+    <mypages1:UserInfoListViewPage Title="DBList"/>
+    <mypages2:MyNetworkListPage  Title = "Network List"/>
+    <mypages3:RegistrationPage Title="Registration"/>
+
+    </TabbedPage.Children>
+</TabbedPage>

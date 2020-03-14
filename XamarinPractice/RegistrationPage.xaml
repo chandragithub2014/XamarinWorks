@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:views="clr-namespace:XamarinPractice" x:Class="XamarinPractice.RegistrationPage"
+             Title="Registration Process">
+
+    <ContentPage.Resources>
+         <ResourceDictionary>
+             <Style x:Key="buttonStyle" TargetType="Button">
+             <Setter Property="BorderRadius" Value="5" />
+                <Setter Property="BorderWidth" Value="5" />
+                <Setter Property="TextColor" Value="White" />
+                 <Setter Property="BackgroundColor" Value="Chocolate"></Setter>
+             </Style>
+
+            <Style x:Key="headingStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="20"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+                <Setter Property="TextColor" Value="AntiqueWhite"></Setter>
+                <Setter Property="BackgroundColor" Value="Green"></Setter>
+                <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
+                
+            </Style>
+
+             <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="20"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+                <Setter Property="TextColor" Value="BlueViolet"></Setter>
+                <Setter Property="VerticalTextAlignment" Value="Center"></Setter>
+                <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
+                 <Setter Property="Padding" Value="0,5,0,0"></Setter>
+                
+            </Style>
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+
+    <StackLayout Orientation="Vertical" HorizontalOptions="Start" VerticalOptions="Start"
+                 Margin="5,5,5,10" >
+        <Label Text="Welcome to Xamarin Registration!" HorizontalOptions="FillAndExpand"
+               HorizontalTextAlignment="Center"
+               Style="{StaticResource headingStyle}"
+               />
+
+      <Grid BackgroundColor="Aquamarine">  
+       
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="7*"></ColumnDefinition>
+                 
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Name" Grid.Row="0" Grid.Column="0" 
+                    Style="{StaticResource labelStyle}"
+                  
+                    
+                   ></Label>
+            <Entry x:Name="name"
+                   Margin="15,0,5,0"
+                   Placeholder="Enter Name"
+                   Grid.Row="0" Grid.Column="1"></Entry>
+
+
+             <Label Text="Place" Grid.Row="1" Grid.Column="0" 
+                    Style="{StaticResource labelStyle}"
+                   
+                   ></Label>
+            <Entry x:Name="place"
+                   Margin="15,0,5,0"
+                   Placeholder="Enter Place"
+                   Grid.Row="1" Grid.Column="1"></Entry>
+
+              <Label Text="Country" Grid.Row="2" Grid.Column="0" 
+                    Style="{StaticResource labelStyle}"
+                   
+                   ></Label>
+            <Entry x:Name="country"
+                   Margin="15,0,5,0"
+                   Placeholder="Enter Country"
+                   Grid.Row="2" Grid.Column="1"></Entry>
+
+             <Label Text="UserName" Grid.Row="3" Grid.Column="0" 
+                    Style="{StaticResource labelStyle}"
+                   
+                   ></Label>
+            <Entry x:Name="username"
+                   Margin="15,0,5,0"
+                   Placeholder="Enter UserName"
+                   Grid.Row="3" Grid.Column="1"></Entry>
+
+             <Label Text="Password" Grid.Row="4" Grid.Column="0" 
+                    Style="{StaticResource labelStyle}"
+                   
+                   ></Label>
+            <Entry x:Name="password"
+                   Margin="15,0,5,0"
+                   IsPassword="True"
+                   Placeholder="Enter Password"
+                   Grid.Row="4" Grid.Column="1"></Entry>
+
+          
+
+        </Grid>  
+
+       
+      <Grid VerticalOptions="EndAndExpand"> 
+    
+            <Grid.RowDefinitions >
+                <RowDefinition Height="60">
+                    
+                </RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                 <ColumnDefinition Width="5*"></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Text="Register" Style= "{StaticResource buttonStyle}"
+                    Clicked="register_Clicked"
+                    ></Button>
+            <Button Grid.Column="1" Text="Cancel" Style= "{StaticResource buttonStyle}"></Button>
+      </Grid>
+           
+            </StackLayout>
+    
+
+        
+
+
+
+</ContentPage>

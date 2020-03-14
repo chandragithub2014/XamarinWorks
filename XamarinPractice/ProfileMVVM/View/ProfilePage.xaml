@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinPractice.ProfileMVVM.View.ProfilePage"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms" xmlns:local="clr-namespace:XamarinPractice.ProfileMVVM.View"
+             Title="Profile Form">
+   
+  <ScrollView>
+   <StackLayout Orientation="Vertical"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand">
+       <StackLayout.Padding>
+                    <OnPlatform 
+                        x:TypeArguments="Thickness"
+                        iOS="20"
+                        Android="5,20,10,0">
+                    </OnPlatform>
+                </StackLayout.Padding>
+       <StackLayout VerticalOptions="StartAndExpand">
+            <!-- top controls -->
+           
+
+           <Grid BackgroundColor="LightYellow">
+               <Grid.RowDefinitions >
+                   <RowDefinition Height="60"></RowDefinition>
+                   <RowDefinition Height="60"></RowDefinition>
+                   <RowDefinition Height="Auto"></RowDefinition>
+                   <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto" ></RowDefinition>
+                        <RowDefinition Height="Auto" ></RowDefinition>
+               </Grid.RowDefinitions>
+               <Grid.ColumnDefinitions>
+                   <ColumnDefinition Width="5*"></ColumnDefinition>
+                   <ColumnDefinition Width="5*"></ColumnDefinition>
+               </Grid.ColumnDefinitions>
+
+               <Label Text="Basic Information"
+                      TextColor="Chocolate"
+                      FontSize="24"
+                      HorizontalTextAlignment="Center"
+                      VerticalTextAlignment="Center"
+                      BackgroundColor="Aqua" Grid.Row="0" Grid.Column="0"
+                      Grid.ColumnSpan="2"></Label>
+              
+               <Entry x:Name="First" Placeholder="Enter First Name" TextColor="Chocolate" Grid.Row="1" Grid.Column="0"  Text = "{Binding FirstName}" ></Entry>
+               <Entry x:Name="Last" Placeholder="Enter Last Name" TextColor="Chocolate" Grid.Row="1" Grid.Column="1"
+                      Text = "{Binding LastName}"></Entry>
+                <Frame Grid.Row="2" Grid.Column="0"
+                       BorderColor="Orange"
+       CornerRadius="10"
+       HasShadow="True">
+               <Label Text="Date Of Birth:" TextColor="Chocolate"
+                      FontSize="20"
+                      HorizontalTextAlignment="Start"
+                      VerticalTextAlignment="Center"
+                      BackgroundColor="White" 
+                      ></Label>
+                     </Frame>
+               <DatePicker x:Name="startDatePicker"
+                    Date= "{Binding SomeDate}" Format="MMMM dd, yyyy"
+                    Grid.Row="2" Grid.Column="1"
+                           
+                     />
+              <StackLayout Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                  >
+                  <Label Text="Indian" TextColor="Brown" VerticalTextAlignment="Center" ></Label>
+                  <CheckBox x:Name="Indian" IsChecked="{Binding IsIndian}" Color="Blue"></CheckBox>
+                   <Label Text="Others" TextColor="Brown" VerticalTextAlignment="Center"></Label>
+                  <CheckBox x:Name="Others" IsChecked="{Binding IsOthers}" Color="DarkRed"></CheckBox>
+
+              </StackLayout>
+              
+               <StackLayout Orientation="Horizontal" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                  >
+                   
+                   <Label Text="Male" TextColor="Brown" VerticalTextAlignment="Center" ></Label>
+                  <Switch IsToggled="{Binding IsMale,Mode=TwoWay}" OnColor="Orange"
+        ThumbColor="Green"  />
+                   <Label Text="Female" TextColor="Brown" VerticalTextAlignment="Center"></Label>
+                   
+                 <Switch IsToggled="{Binding IsFeMale,Mode=TwoWay}" OnColor="Orange"
+        ThumbColor="Green"/>
+
+                   </StackLayout>
+               <!-- <Label Text="Gender Information"
+                      TextColor="Chocolate"
+                      FontSize="24"
+                      HorizontalTextAlignment="Center"
+                      VerticalTextAlignment="Center"
+                      BackgroundColor="Aqua" Grid.Row="3" Grid.Column="0"
+                      Grid.ColumnSpan="2"></Label>
+              <syncfusion:SfRadioGroup x:Name="radioGroup" Orientation="Horizontal"  
+                                        Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="White">
+              <syncfusion:SfRadioButton x:Name="check" Text="Male" IsChecked="True" UncheckedColor="Pink"
+                                        CheckedColor="Green"
+                                        BorderWidth="3"/>
+               <syncfusion:SfRadioButton x:Name="uncheck" Text="Female" UncheckedColor="Pink"
+                                         CheckedColor="Green"
+                                         BorderWidth="3"/> 
+                    </syncfusion:SfRadioGroup> -->
+               
+              
+                <Label Text="Contact Information"
+                      TextColor="Chocolate"
+                      FontSize="24"
+                      HorizontalTextAlignment="Center"
+                      VerticalTextAlignment="Center"
+                      BackgroundColor="Aqua" Grid.Row="5" Grid.Column="0"
+                      Grid.ColumnSpan="2"></Label>
+               <Entry x:Name="Phone" Keyboard="Telephone" Placeholder="Enter Mobile"
+                      Grid.Row="6" 
+                      Grid.Column="0"
+                      Grid.ColumnSpan="2"
+                      Text="{Binding ContactNumber}"></Entry>
+
+           </Grid>
+            <Frame Margin="10"
+       BorderColor="Black"
+       CornerRadius="50"
+       HeightRequest="60"
+       WidthRequest="60"
+       IsClippedToBounds="True"
+       HorizontalOptions="Center"
+       VerticalOptions="Center">
+  <Image Source="outdoors.jpg"
+         Aspect="AspectFill"
+         Margin="-20"
+         HeightRequest="100"
+         WidthRequest="100" />
+</Frame>
+        </StackLayout>
+      
+       <StackLayout  VerticalOptions="End">
+             <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+                 <ColumnDefinition Width="5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Save" Text="Save" Grid.Column="0"
+                    Command="{Binding saveCommand}"
+                    ></Button>
+            <Button x:Name="Cancel" Text="Cancel" Grid.Column="1"
+                    Command="{Binding cancelCommand}"></Button>
+
+        </Grid>
+        </StackLayout>
+      
+   </StackLayout>
+      </ScrollView>   
+</ContentPage>
+
+
+
+<!--
+
+<StackLayout Orientation="Vertical">
+
+    <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="End">
+      <Grid.ColumnDefinitions>
+          <ColumnDefinition>
+              <Grid.Column>5*</Grid.Column>
+              
+          </ColumnDefinition>
+          <ColumnDefinition>
+              <Grid.Column>5*</Grid.Column>
+          </ColumnDefinition>
+      </Grid.ColumnDefinitions>
+<Button x:Name="Save" Text="Save" Grid.Column="0" ></Button>
+        <Button x:Name="Cancel" Text="Cancel" Grid.Column="1" ></Button>
+    </Grid>
+     </StackLayout>
+
+ <Grid >
+            
+            <Button x:Name="Save" Text="Save" Grid.Column="0" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand"></Button>
+            <Button x:Name="Cancel" Text="Cancel" Grid.Column="1" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand"></Button>
+
+        </Grid>
+-->
