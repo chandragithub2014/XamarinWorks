@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XamarinPractice.ListMVVM.View.CarListPage">
+<StackLayout Orientation="Vertical">
+    <ActivityIndicator Color="Orange" IsRunning="{Binding IsBusy}"
+                       IsVisible="{Binding IsBusy}"></ActivityIndicator>
  <ListView ItemsSource= "{Binding Items}" HasUnevenRows="False"
            CachingStrategy="RecycleElement"
            ItemTapped="ListView_ItemTapped">
@@ -13,4 +16,5 @@
          </DataTemplate>
      </ListView.ItemTemplate>
  </ListView>
+    </StackLayout>
 </ContentPage>

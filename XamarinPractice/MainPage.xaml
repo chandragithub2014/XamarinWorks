@@ -38,11 +38,20 @@
                IsPassword="True"></Entry>
         <StackLayout Orientation="Horizontal" Margin="0,30,0,30"
             >
-        <Button x:Name="login" Text="Login"  Clicked="login_Clicked"
-                Style="{StaticResource buttonStyle}"> </Button>
-            <Button x:Name="signUp" Text="Register" 
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+        <Button x:Name="login" Text="Login"  Clicked="login_Clicked" Grid.Column="0"
+                Style="{StaticResource buttonStyle} "> </Button>
+            <Button x:Name="signUp" Text="Register" Grid.Column="1"
                     Style="{StaticResource buttonStyle}"
                     Clicked="signUp_Clicked"> </Button>
+                </Grid>
         </StackLayout>
     </StackLayout>
 </ContentPage>

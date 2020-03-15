@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Refit;
+using Xamarin.Forms;
 using XamarinPractice.ListMVVM.Model;
 
 namespace XamarinPractice.ListMVVM.ViewModel
@@ -54,9 +55,35 @@ namespace XamarinPractice.ListMVVM.ViewModel
             }
         }
 
+        private bool isBusy = false;
+        public bool IsBusy
+        {
+
+            get { return isBusy; }
+            set {
+                if (isBusy == value)
+                    return;
+                isBusy = value;
+                OnPropertyChanged();
+            }
+        }
         public  CarsViewModel()
         {
-            Items = new ObservableCollection<Car>(){
+
+            // IsEnabled = true;
+
+            LoadData();
+            fetchDataFromHTTP();
+
+
+
+       }
+
+        private  void  LoadData()
+        {
+               
+                    
+                Items = new ObservableCollection<Car>(){
 
             new Car()
             {
@@ -75,27 +102,40 @@ namespace XamarinPractice.ListMVVM.ViewModel
                 CarID = 503,
                 Make = "Hyundai",
                 YearOfModel =  2000
-            },
+            }
 
         };
-            MyHTTP.GetAllNewsAsync(list =>
-            {
-                foreach (Car item in list)
-                {
-                    Items.Add(item);
-                }
-            });
-            
-            
-
-           
-
-       }
+        }
         private async Task<List<Car>> fetchPostsAsync()
         {
             var _restClient = RestService.For<RetroInterface>("https://api.myjson.com/bins");
             return await _restClient.GetCarDetails();
 
+        }
+
+
+        private async void fetchDataFromHTTP()
+        {
+            if (IsBusy)
+                return;
+            try {
+                
+
+                IsBusy = true;
+                await MyHTTP.GetAllNewsAsync(list =>
+            {
+                foreach (Car item in list)
+                {
+                    Items.Add(item);
+
+                }
+                IsBusy = false;
+            });
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
     }
